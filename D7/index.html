@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--
+        You have been assigned to the creation of a Smartphone Shop Website.
+        The shop is just a showcase of the products of the shop with some extra informations.
+        No shopping cart / checkout features are required.
+        EX1.:
+        Add H1 title with the name of the shop
+        EX2.: 
+        Add a TABLE with the top 5 products of the shop
+        EX3.: 
+        Each product should have one image, title, description and price
+        EX4.:
+        Add Map to the shop 
+        EX5.: 
+        Add the links to Amazon products for each item in the table
+        EX6.:
+        Add a footer with the address and the name of the shop
+        EX7.: 
+        Add a message board where the user can type a message in it (only client side)
+        // EXTRA 
+        EX8.: 
+        Write a function to change the heading text
+        EX9.:
+        Write a function to change the page background color
+        EX10.:
+        Write a function to change the footer address with a fake one
+    -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smartphone Shop</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #smartphone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Work Sans", sans-serif;
+      }
+
+      table tr td{
+          padding: 10px;
+          text-align: center;
+      }
+
+      p {
+          width: 150px;
+          height: 150px;
+      }
+
+      #first-row {
+        font-size: 32px;
+      }
+
+      #text {
+          width: 320px;
+          height: 120px;
+          text-align: center;
+      }
+
+      #red {
+        background-color: red;
+      }
+      
+      #white {
+        background-color: white;
+      }
+
+      #white,#red{
+        margin: 5px;
+        width: 20px;
+        height: 20px;
+      }
+
+      #saveButton {
+        padding: 5px;
+        color: #181818;
+        margin-top: 10px;
+      }
+
+      div:nth-of-type(2) > *{
+        margin-bottom: 4px;
+      }
+
+      .nonDisplay {
+        display: none;
+      }
+
+      .colorChanger {
+        color: #00ff84
+      }
+    </style>
+  </head>
+  <body>
+    <div id="smartphone">
+      <h1>Smartphone Shop</h1>
+      <div style="text-align: center;">
+         <div>Change theme</div>   
+        <button id="white"></button><button id="red"></button>
+      </div>
+      <table>
+        <tr id="first-row">
+          <td>Image</td>
+          <td>Title</td>
+          <td>Description</td>
+          <td>Price</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="/images/xiaomi-redmi-note-9-pro-169-cm-667-dual-sim-ibrida-4g-usb-tipo-c-6-gb-128-gb-5020-mah-grigio.jpg"
+              width="100"
+              height="100"
+              alt="phone"
+            />
+          </td>
+          <td><h2>Redmi 9</h2></td>
+          <td>
+              <p>
+                  Xiaomi Redmi Note 9 Pro Smartphone, 6 GB + 128 GB, 6.67 "DotDisplay,
+                  64 MP AI Quad Camera, 5020mAh (typ) NFC, Green (Tropical Green)
+              </p>
+          </td>
+          <td><h2>$208</h2></td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="/images/xiaomi-redmi-note-9-pro-169-cm-667-dual-sim-ibrida-4g-usb-tipo-c-6-gb-128-gb-5020-mah-grigio.jpg"
+              width="100"
+              height="100"
+              alt="phone"
+            />
+          </td>
+          <td><h2>Redmi 9</h2></td>
+          <td>
+              <p>
+                  Xiaomi Redmi Note 9 Pro Smartphone, 6 GB + 128 GB, 6.67 "DotDisplay,
+                  64 MP AI Quad Camera, 5020mAh (typ) NFC, Green (Tropical Green)
+              </p>
+          </td>
+          <td><h2>$208</h2></td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="/images/xiaomi-redmi-note-9-pro-169-cm-667-dual-sim-ibrida-4g-usb-tipo-c-6-gb-128-gb-5020-mah-grigio.jpg"
+              width="100"
+              height="100"
+              alt="phone"
+            />
+          </td>
+          <td><h2>Redmi 9</h2></td>
+          <td>
+              <p>
+                  Xiaomi Redmi Note 9 Pro Smartphone, 6 GB + 128 GB, 6.67 "DotDisplay,
+                  64 MP AI Quad Camera, 5020mAh (typ) NFC, Green (Tropical Green)
+              </p>
+          </td>
+          <td><h2>$208</h2></td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="/images/xiaomi-redmi-note-9-pro-169-cm-667-dual-sim-ibrida-4g-usb-tipo-c-6-gb-128-gb-5020-mah-grigio.jpg"
+              width="100"
+              height="100"
+              alt="phone"
+            />
+          </td>
+          <td><h2>Redmi 9</h2></td>
+          <td>
+              <p>
+                  Xiaomi Redmi Note 9 Pro Smartphone, 6 GB + 128 GB, 6.67 "DotDisplay,
+                  64 MP AI Quad Camera, 5020mAh (typ) NFC, Green (Tropical Green)
+              </p>
+          </td>
+          <td><h2>$208</h2></td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="/images/xiaomi-redmi-note-9-pro-169-cm-667-dual-sim-ibrida-4g-usb-tipo-c-6-gb-128-gb-5020-mah-grigio.jpg"
+              width="100"
+              height="100"
+              alt="phone"
+            />
+          </td>
+          <td><h2 class="title">Redmi 9</h2></td>
+          <td>
+              <p>
+                  Xiaomi Redmi Note 9 Pro Smartphone, 6 GB + 128 GB, 6.67 "DotDisplay,
+                  64 MP AI Quad Camera, 5020mAh (typ) NFC, Green (Tropical Green)
+              </p>
+          </td>
+          <td><h2>$208</h2></td>
+        </tr>
+      </table>
+      <input type="text" name="text" id="text" placeholder="Write your message">
+      <button type="submit" id="saveButton" onclick="saveData()">Save Message</button>
+      <footer><h4>Via Giuseppe, 54</h4><h4>Smartphone Shop</h4></footer>
+    </div>
+    <script>
+      document.getElementById('smartphone').innerHTML += `<h2 id="listTitle">Todo List</h2>
+        <ul id="firstList">
+            <li><p>1st</p></li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
+        <ul id="secondList">
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
+        <div style="display: flex; flex-direction: column;" >
+            <p>This text is just for the exercise</p>
+        </div>`
+        
+        document.getElementsByTagName('div')[3].innerHTML += `<button onclick="saveButton()" >Save info</button>`
+        document.getElementsByTagName('div')[3].innerHTML += `<button onclick='ulColorChanger()'>Change ul background</button>`
+        document.getElementsByTagName('div')[3].innerHTML += `<button onclick = "toggleImages()" >Toggle product images</button`
+          
+        document.getElementsByTagName('h1')[0].addEventListener('click', function() {
+            document.getElementsByTagName('h1')[0].innerText = 'The Best Phone Store'
+        })
+
+        document.getElementById('red').addEventListener('click', function() {
+          document.getElementsByTagName('body')[0].style.background = 'red'
+        })
+
+        document.getElementById('white').addEventListener('click', function() {
+          document.getElementsByTagName('body')[0].style.background = 'white'
+        })
+
+        document.getElementsByTagName('h4')[0].addEventListener('click', function() {
+          document.getElementsByTagName('h4')[0].innerText = "Via Cambridge, 13"
+        })
+        
+        document.getElementsByTagName('h4')[1].addEventListener('click', function() {
+          document.getElementsByTagName('h4')[1].innerText = "Android Phone Shop"
+        })
+
+        window.onload = alert("Page has been successfully loaded")
+
+        document.getElementsByClassName('title')[0].addEventListener('click', function() {
+          document.getElementsByClassName('title')[0].innerHTML = 'Xiaomi 9'
+        })
+
+        const header = document.getElementsByTagName('h1')[0]
+        header.addEventListener('mouseover', function() {
+          header.style.color = 'blue'
+        })
+
+        header.addEventListener('mouseout', function() {
+          header.style.color = 'black'
+        })
+
+          
+          const paragraph = document.getElementsByTagName('p')[6]
+          paragraph.addEventListener('click', function() {
+            paragraph.innerText = 'The pargaraph has changed'
+          })
+
+          const saveData = function() {
+            const message = document.querySelector('input').value
+            document.querySelector("#listTitle").innerText = message
+          }
+
+          const inputField = document.createElement('input')
+          inputField.classList.add('inputField')
+          const inputButton = document.createElement('button')
+          inputButton.innerText = 'Save Text'
+          inputButton.style.marginLeft = '4px'
+          inputButton.className = 'saveButton'
+
+          document.getElementsByTagName('div')[3].appendChild(inputField)
+          document.getElementsByTagName('div')[3].appendChild(inputButton)
+          
+          const ulColorChanger = function() {
+            const UL = document.getElementsByTagName('UL')
+            for(let i = 0; i < UL.length; i++) {
+              UL[i].classList.toggle('colorChanger');
+            }
+          }
+          
+          const cells = document.getElementsByTagName('td')
+          
+          for (let i = 4; i < cells.length; i++) {
+            cells[i].addEventListener('mouseenter', function() {
+              cells[i].style.fontSize = 'small'
+            })
+          }
+          
+          for (let i = 4; i < cells.length; i++) {
+            cells[i].addEventListener('mouseleave', function() {
+              cells[i].style.fontSize = 'medium'
+            })
+          }
+          // firstElementChild
+          
+          const toggleImages = function() {
+            for (let i = 4; i < cells.length; i++) {
+              if((i % 4) === 0) {
+                cells[i].classList.toggle('nonDisplay')
+              }
+            }
+          }
+
+          // window.onload = document.querySelector('.saveButton').addEventListener('click', saveButton()) 
+          
+          const saveButton = function () {
+            const li = document.createElement('li')
+            li.innerText = document.querySelector(".inputField").value
+            document.querySelector('#secondList').appendChild(li)
+          }
+
+          let colors = ['red', 'green', 'yellow', 'purple', 'grey', 'light-blue',]
+
+          document.getElementsByTagName('h1')[0].addEventListener('click', function() {
+            document.getElementsByTagName('h1')[0].style.color = colors[Math.round(Math.random() * 10)]
+          })
+          // document.getElementsByClassName('saveButton').addEventListener('click', saveButton())
+          // document.querySelector("#secondList").innerHTML += `<li></li>`
+
+          // const saveButton = function() {
+          //   document.getElementsByTagName('ul')[0].remove()
+          // }
+
+    </script>
+  </body>
+</html>

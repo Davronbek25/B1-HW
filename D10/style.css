@@ -1,0 +1,59 @@
+body {
+    font-family: 'IBM Plex Sans Devanagari', sans-serif;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+    background-color: #3334;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: #C30052
+}
+
+table {
+    border: 1px solid black;
+    font-size: small;
+    border-radius: 10px;
+    background-color: #181818;
+    color: #00ff84
+}
+
+tr {
+    border: 1px dotted black
+}
+
+td {
+    padding: 1rem 0.2rem;
+    margin: 0.5rem;
+    border-bottom: 2px solid #00ff84;
+    /* border: 0 0 2px 0 outset #00ff84; */
+    /* border-radius: 5px; */
+}
+
+.text {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.hideImage {
+    display: none;
+}
+
+.pinkBorder {
+    border: 1px solid pink
+}
+
+.hideTable {
+    /* visibility: hidden; */
+    display: none;
+}

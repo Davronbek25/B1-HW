@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+            BINGO CHALLENGE!!!
+            Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+            Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+            EXTRA: 
+            - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+            - Create a USER BOARD with random 24 numbers that highlights as the main board does
+            - Let the user choose HOW MANY user boards he's willing to play with and create them.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BINGO CHALLENGE</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        body {
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Poppins", sans-serif;
+        }
+
+        #container {
+            width: 70%;
+            text-align: center;
+        }
+        
+        td {
+            border-radius: 3px;
+            width: 3rem;
+            height: 3rem;
+            background-color: #181818;
+            color: white;
+            cursor: pointer;
+        }
+
+        td:hover {
+            color: #00ff84;
+        }
+
+        input[type='button'] {
+            margin-top: 2rem;
+            border-radius: 1rem;
+            min-height: 4rem;
+            min-width: 8.6rem;
+            background-color: #181818;
+            color:#f8f8f8;
+            border: none;
+            font-size: large;
+        }
+
+        input[value='Randomize']:hover {
+            background-color: #00ff84;
+            color: #181818;
+        }
+
+        .chosenRandom {
+            background-color: #00ff84;
+            color: #181818
+        }
+
+        #random {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        span {
+            min-height: 5rem;
+            min-width: 5rem;
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 1rem;
+        }
+
+        h4 {
+            margin: 1rem 0 0 0
+        }
+    </style>
+</head>
+<body>
+    <h1>BINGO CHALLENGE</h1>
+    <div id="container"></div>
+    <div id="random">
+        <input type="button" value="Randomize" id="randomize" onclick="randomize()" >
+        <span>
+            <h4></h4>
+        </span>
+    </div>
+    <script>
+        const table = document.createElement('table')
+        let seventySix = []
+        
+        for (let i = 0; i < 4; i++) {
+            seventySix[i] = []
+            if(i === 0) {
+                for (let i = 1; i < 20; i++) {
+                    seventySix[0].push(i);
+                }
+            }else if(i === 1) {
+                for (let i = 20; i < 39; i++) {
+                    seventySix[1].push(i);
+                }
+            }else if(i === 2) {
+                for (let i = 39; i < 58; i++) {
+                    seventySix[2].push(i);
+                }
+            }else {
+                for (let i = 58; i < 77; i++) {
+                    seventySix[3].push(i);
+                }
+            }
+        }
+
+        for(let i = 0; i < 4; i++) {
+            const tr = document.createElement('tr')
+            let num = seventySix[i]
+            for (let i = 0; i < 19; i++) {
+                const cell = document.createElement('td');
+                cell.innerText = num[i]
+                tr.appendChild(cell)
+            }
+            table.appendChild(tr)
+        }
+
+        document.getElementById('container').appendChild(table)
+
+        let randomNums = []
+        const randomize = function() {
+            let random = Math.round(Math.random() * 76) + 1
+            randomNums.push(random)
+            for (let i = 0; i < randomNums.length; i++) {
+                if(random === randomNums[i]) {
+                    random = Math.round(Math.random() * 76) + 1
+                }
+            }
+            let cells = document.getElementsByTagName('td')
+            for (let i = 0; i < cells.length; i++) {
+                if(cells[i].innerText === random.toString()) {
+                    document.getElementsByTagName('td')[i].classList.add('chosenRandom')
+                    // document.getElementsByTagName('td')[i].style.cssText = "background-color: #00ff84; color: #181818"
+                }else cells[i].classList.remove('chosenRandom')
+                // cells[i].style.cssText = 'color: #f8f8f8; background-color: #181818'
+            }
+            document.getElementsByTagName('span')[0].style.backgroundColor = '#00ff84'
+            document.getElementsByTagName('h4')[0].innerText = random
+        }
+
+    </script>
+</body>
+</html>
